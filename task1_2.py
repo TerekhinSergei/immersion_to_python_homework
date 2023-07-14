@@ -12,7 +12,7 @@ a = float(input('введите длину стороны a: '))
 b = float(input('введите длину стороны b: '))
 c = float(input('введите длину стороны c: '))
 
-if (a + c > b) and (a + b > c) and (b + c > a):
+if a + c > b and a + b > c and b + c > a:
     if a == b and b == c:
         print('Треугольник существует')
         print('Треугольник равносторонний')
