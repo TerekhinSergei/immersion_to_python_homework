@@ -10,7 +10,7 @@ def my_fun(f_path: str) -> tuple:
     path = '\\'.join(data[:len(data) - 1:])
     filename = data[len(data) - 1:len(data)]
     name, extension = filename[0].split('.')
-    res = (path, name, extension)
+    res = path, name, extension
     return res
 
 
