@@ -16,14 +16,16 @@ import os
 
 def rename_files(final_name: str, len_number: int, start_ext: str, final_ext: str,
                  old_name: list[int, int], work_dir=os.getcwd()):
+    count = 1
     start_letter, end_letter = old_name
     for dirs, folders, files in os.walk(work_dir):
         for i, file in enumerate(files):
             if file.endswith(start_ext):
                 old_name = os.path.join(dirs, file)
                 new_name = (f'{dirs}\\{file[start_letter:end_letter]}{final_name}'
-                            f'{str(i).zfill(len_number)}.{final_ext}')
+                            f'{str(count).zfill(len_number)}.{final_ext}')
                 os.rename(old_name, new_name)
+                count += 1
 
 
 rename_files('_file', 2, 'pdf', 'my_pdf', [1, 5], 'Files_folder_7')
